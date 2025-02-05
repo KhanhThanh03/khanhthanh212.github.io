@@ -11,51 +11,196 @@
     <script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
-   <div class="container">
-        <header>
-            <img src="../img/gioithieu.jpg" alt="gioithieu" width="30%" height="100">
-            <h1> WELCOME! </h1>
-            <h6> Tại đây chúng tôi cung cấp các văn phòng phẩm thiết yếu </h6>
-            
-            <div class="LG">
-                <img src="../img/logo.png" alt="logo" width="50">
+    <div class="container">
+        <div class="dndk">
+            <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#frmDN">Đăng Nhập</button>
+
+            <div class="modal" id="frmDN">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Đăng Nhập</h5>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" method="" class="">
+                                <h3 class="text-center mb-4">ĐĂNG NHẬP</h3>
+                                <div class="form-group d-flex align-items-center mb-3">
+                                    <label for="fullname" class="col-form-label text-right" style="width: 200px;">Tên đăng nhập:</label>
+                                    <input type="text" name="fullname" id="txttendn" class="form-control ml-3" placeholder="Nhập vào tên đăng nhập VD:Ho Ten" onblur="kttendn()"/>
+                                    <div id="ertendn" class="text-danger ml-2">*</div>
+                                </div>
+                                <div class="form-group d-flex align-items-center mb-3">
+                                    <label for="txtmk" class="col-form-label text-right" style="width: 200px;">Mật khẩu:</label>
+                                    <input type="password" name="txtmk" id="txtmk" class="form-control ml-3" placeholder="Nhập vào mật khẩu" onblur="ktmk()"/>
+                                    <span class="text-danger" id="ermk" class="ml-2">*</span>
+                                </div>
+                                <span style="color: red;" id="thongbao" class="d-block mb-3">*</span>
+                                <div class="text-center">
+                                    <input type="button" value="Đăng nhập" class="btn btn-dark text-white" onclick="Dangnhap()">
+                                    <input type="reset" data-dismiss="modal" value="Hủy" class="btn btn-dark text-white">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <form class="form-inline my-2 my-lg-0">
-                <input type="search" class="form-control mr-sm-2" placeholder="Nhập nội dung" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Tìm kiếm </button>
-            </form>
-        </header>
 
-        <nav>
-        <div class="row col-md-12">
-            <div class="navbar navbar-expand-lg navbar-light">
-                <!-- <div class="navbar-brand">  </div> -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#frmDK">Đăng Ký</button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active"> <a href="../html/Trangchu.html" class="nav-link"> Trang Chủ <span class="sr-only"> (current) </span> </a> </li>
-                        <li class="nav-item"> <a href="../html/Gioithieu.html" class="nav-link"> Giới Thiệu </a> </li>
-                        <li class="nav-item dropdown"> <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Danh Mục Sản Phẩm </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
-                                <a href="../html/Giay.html" class="dropdown-item"> Giấy </a>
-                                <a href="../html/But.html" class="dropdown-item"> Bút <a>
-                                <a href="../html/Bia.html" class="dropdown-item"> Bìa </a>
-                            <!--<div class="dropdown-divider"> </div>
-                                    <a href="#" class="dropdown-item"> Something else here </a>-->
-                            </div>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="../html/Tintuc.html" class="nav-link"> Tin Tức </a>
-                        </li>
-                    </ul>
+            <div class="modal" id="frmDK">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Đăng Ký</h5>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" method="" class="">
+                                <h3 class="text-center mb-4">ĐĂNG KÝ</h3>
+                                <div class="form-group d-flex align-items-center mb-3">
+                                    <label for="txtten" class="col-form-label text-right" style="width: 200px;">Họ và tên:</label>
+                                    <input class="form-control ml-3" type="text" name="txtten" id="txtten" placeholder="Nhập vào họ tên (bắt buộc nhập) VD:Ho Ten" onblur="ktten()">
+                                    <div id="erten" class="text-danger ml-2">*</div>
+                                </div>
+                                <div class="form-group d-flex align-items-center mb-3">
+                                    <label for="datens" class="col-form-label text-right" style="width: 200px;">Ngày sinh:</label>
+                                    <input type="date" name="datens" id="datens" class="form-control ml-3" onblur="ktns()">
+                                    <div id="erns" class="text-danger ml-2">*</div>
+                                </div>
+                                <div class="form-group d-flex align-items-center mb-3">
+                                    <label for="txtdc" class="col-form-label text-right" style="width: 200px;">Địa chỉ:</label>
+                                    <input type="text" name="txtdc" id="txtdc" class="form-control ml-3" placeholder="Tên đường, xã/phường, huyện/quận, tỉnh/thành phố" onblur="ktdc()"/>
+                                    <span id="erdc" class="text-danger ml-2">*</span>
+                                </div>
+                                <div class="form-group d-flex align-items-center mb-3">
+                                    <label for="txtsdt" class="col-form-label text-right" style="width: 200px;">Điện thoại:</label>
+                                    <input type="text" name="txtsdt" id="txtsdt" class="form-control ml-3" placeholder="Nhập vào số điện thoại (10 số)" onblur="ktsdt()"/>
+                                    <span id="ersdt" class="text-danger ml-2">*</span>
+                                </div>
+                                <div class="form-group d-flex align-items-center mb-3">
+                                    <label for="txtemail" class="col-form-label text-right" style="width: 200px;">Email:</label>
+                                    <input type="email" name="txtemail" id="txtemail" class="form-control ml-3" placeholder="Nhập vào Email cá nhân VD:ten@gmail.com" onblur="ktemail()"/>
+                                    <span id="eremail" class="text-danger ml-2">*</span>
+                                </div>
+                                <div class="form-group d-flex align-items-center mb-3">
+                                    <label for="mk" class="col-form-label text-right" style="width: 200px;">Mật khẩu:</label>
+                                    <input type="password" name="mk" id="mk" class="form-control ml-3" placeholder="Nhập vào mật khẩu" onblur="ktmk1()"/>
+                                    <span class="text-danger ml-2" id="emk">*</span>
+                                </div>
+                                <div class="form-group d-flex align-items-center mb-3">
+                                    <label for="txtcheckmk" class="col-form-label text-right" style="width: 200px;">Nhập lại mật khẩu:</label>
+                                    <input type="password" name="mk" id="txtcheckmk" class="form-control ml-3" placeholder="Hệ thống sẽ tự động chỉnh nếu bạn nhập không chính xác" onblur="ktnlmk()"/>
+                                    <span class="text-danger ml-2" id="enlmk">*</span>
+                                </div>
+                                <span style="color: red;" id="thongbao" class="d-block mb-3">*</span>
+                                <div class="text-center">
+                                    <input type="button" value="Đăng ký" class="btn btn-dark text-white" onclick="Dangky()" id="btnSave">
+                                    <input type="reset" value="Hủy" data-dismiss="modal" class="btn btn-dark text-white">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        </nav> 
+    </div>
+    
+    <header>
+    <div class="LG text-center mb-3">
+        <img src="../img/logo.png" alt="logo" width="80">
+    </div>
+
+    <div class="text-center mb-4">
+        <img src="../img/gioithieu.jpg" alt="gioithieu" width="30%" height="100">
+        <h6>Tại đây chúng tôi cung cấp các văn phòng phẩm thiết yếu</h6>
+    </div>
+
+    <form class="form-inline my-2 justify-content-center">
+        <input type="search" class="form-control mr-sm-2" placeholder="Nhập nội dung" aria-label="Search">
+        <button class="btn btn-outline-success me-2 mr-sm-0" type="submit">Tìm kiếm</button>
+    </form>
+    </header>
+
+    <nav>
+    <div class="row col-md-12">
+        <div class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a href="../html/Trangchu.html" class="nav-link">Trang Chủ <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../html/Gioithieu.html" class="nav-link">Giới Thiệu</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Danh Mục Sản Phẩm
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a href="../html/Giay.html" class="dropdown-item">Giấy</a>
+                            <a href="../html/But.html" class="dropdown-item">Bút</a>
+                            <a href="../html/Bia.html" class="dropdown-item">Bìa</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../html/Tintuc.html" class="nav-link">Tin Tức</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-toggle='modal' data-target='#custumer'>Thông tin khách hàng</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </nav>
+
+    <div class="GT">
+    <div class="gioithieu">
+        <div class="slideshow-container">
+            <img class="mySlides" src="../img/sale.jpg" width="100%" height="200">
+            <img class="mySlides" src="../img/sale1.jpeg" width="100%" height="200">
+            <img class="mySlides" src="../img/sale2.jpg" width="100%" height="200">
+        </div>
+    </div>
+    </div>
+
+    <!-- Modal for customer info -->
+    <div class="modal" id="custumer">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="text-light text-center"><b>Thông tin khách hàng</b></h3>
+            </div>
+            <div class="modal-body">
+                <table class="table-bordered table-primary table table-striped" id="">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Họ tên</th>
+                            <th>Ngày Sinh</th>
+                            <th>Địa chỉ</th>
+                            <th>SDT</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Khanh Thanh</td>
+                            <td>2003-12-02</td>
+                            <td>Long An</td>
+                            <td>0123456789</td>
+                            <td>thanh@gmail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
 
         <aside>
             <img src="../img/hang.jpg" alt="hang" width="100%" height="150">
@@ -138,39 +283,260 @@
             </div>
         </article>
         
-        <footer>
-            <div class="anh">
-                <img src="../img/logo.png" alt="lg" width="80">
-            </div>
-            <div class="contact">
-                <h5> Kết nối với chúng tôi! </h5>
-                <a href="https://www.facebook.com/"> <img src="../img/facebook.png" alt="fb" width="20"> </a>
-                <a href="https://www.instagram.com/"> <img src="../img/Instagram.png" alt="itg" width="20"> </a>
-                <a href="https://twitter.com/i/flow/login"> <img src="../img/Twitter.png" alt="tw" width="20"> </a>
-                <a href="https://www.youtube.com/"> <img src="../img/youtube.png" alt="yt" width="20"> </a>
-            </div>   
-            
-            <div class="introduce">
-                <img src="../img/unnamed.png" alt="un" width="200">
-                <h6> <b>DC:</b> 12 Nguyễn Văn Bảo, quận Gò Vấp, TP.HCM <br> 
-                     <b>SDT:</b> 0123456789 <br>
-                     <b>Email:</b> vpp@gmail.com
-                </h6>
-            </div>
-
-            <div class="deli">
-                <img src="../img/vanchuyen.png" alt="vc" width="120">
-                <p> Chúng tôi <i> <b> nhận đặt hàng trực tuyến và giao hàng tận nơi </b> </i>. <br>
-                    <b> KHÔNG </b> hỗ trợ đặt mua và nhận hàng trực tiếp tại văn phòng </p>
-            </div>
-        </footer>
+        <article>
+    <div class="align">
+        <img src="../img/DK.png" alt="dangky" width="70">
+        <h5>NHẬN THÔNG TIN ƯU ĐÃI <br> HỮU ÍCH TỪ VPP</h5>
+        <div class="form-group form-check-inline">
+            <input type="email" name="email" id="email" class="w-100 ml-12" placeholder="ten@gmail.com" onblur="ktemail1()"/>
+            <span id="email-error" class="text-danger">*</span>
+            <label for="email" class="col-form-label text-right" style="width: 200px;">
+                <a href="#" onclick="Dangky1()">Đăng Ký</a>
+            </label>
+        </div>
     </div>
-    <script>
+    </article>
+
+    <footer>
+    <!-- Logo Section -->
+    <div class="anh">
+        <img src="../img/logo.png" alt="logo" width="80">
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <h5>Kết nối với chúng tôi!</h5>
+        <a href="https://www.facebook.com/" aria-label="Facebook">
+            <img src="../img/facebook.png" alt="Facebook" width="20">
+        </a>
+        <a href="https://www.instagram.com/" aria-label="Instagram">
+            <img src="../img/Instagram.png" alt="Instagram" width="20">
+        </a>
+        <a href="https://twitter.com/i/flow/login" aria-label="Twitter">
+            <img src="../img/Twitter.png" alt="Twitter" width="20">
+        </a>
+        <a href="https://www.youtube.com/" aria-label="YouTube">
+            <img src="../img/youtube.png" alt="YouTube" width="20">
+        </a>
+    </div>
+
+    <!-- Address and Contact Info Section -->
+    <div class="introduce">
+        <img src="../img/unnamed.png" alt="un" width="200">
+        <h6>
+            <b>ĐC:</b> 12 Nguyễn Văn Bảo, quận Gò Vấp, TP.HCM <br> 
+            <b>SDT:</b> 0123456789 <br>
+            <b>Email:</b> vpp@gmail.com
+        </h6>
+    </div>
+
+    <!-- Delivery Information Section -->
+    <div class="deli">
+        <img src="../img/vanchuyen.png" alt="vanchuyen" width="120">
+        <p>Chúng tôi <i><b>nhận đặt hàng trực tuyến và giao hàng tận nơi</b></i>. <br>
+            <b>KHÔNG</b> hỗ trợ đặt mua và nhận hàng trực tiếp tại văn phòng.
+        </p>
+    </div>
+    </footer>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#btnSave").click(function() {
+                var i = 2;
+                var ten = $("#txtten").val();
+                var ns = $("#datens").val();
+                var dc = $("#txtdc").val();
+                var sdt = $("#txtsdt").val();
+                var mail = $("#txtemail").val();
+                var them = "<tr><td>" + (i++) + "</td><td>" + ten + "</td><td>" + ns + "</td><td>" + dc + "</td><td>" + sdt + "</td><td>" + mail + "</td></tr>";
+                
+                $("table tbody").append(them);
+                $("#frmDK").modal("hide");
+                return true;
+            });
+    })
+
+    var myIndex = 0;
+    carousel();
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {
+            myIndex = 1
+        }    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 2500); // Change image every 2 seconds
+    }
+
+    var slideIndex = 11;
+        showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlide");
+        if (n > x.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = x.length
+        }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        x[slideIndex-1].style.display = "block";  
+    }
+
+    function kttendn() {
+            let ten = document.getElementById('txttendn').value;
+            // Ho Dem Ten : 
+            let pattendn = /(^[A-Z]{1})([a-z]+)(\s[A-Z]{1}([a-z]+))*$/; 
+            //ten dang nhap
+            if (ten == "") {
+                document.getElementById('ertendn').innerHTML = "Yêu cầu nhập!";
+                return false;
+            }
+            if (pattendn.test(ten)) {
+                document.getElementById('ertendn').innerHTML = "*";
+                return true;
+            } else {
+                document.getElementById('ertendn').innerHTML = "Không đúng! Xin nhập lại theo dạng: Ho Ten";
+                return false;
+            }
+        }
+
+    function ktmk() {
+        let mk = document.getElementById('txtmk').value;
+        let patmk = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        if (mk == "") {
+            document.getElementById('ermk').innerHTML = "Yêu cầu nhập!";
+            return false;
+        } if (patmk.test(mk)) {
+            document.getElementById('ermk').innerHTML = "*";
+            return true;
+        } else {
+            document.getElementById('ermk').innerHTML = "Tối thiểu tám ký tự, ít nhất một chữ cái và một số";
+            return false;
+        }
+    }
+
+    function ktten() {
+            let ten = document.getElementById('txtten').value;
+            // Ho Dem Ten : 
+            let patten = /(^[A-Z]{1})([a-z]+)(\s[A-Z]{1}([a-z]+))*$/; 
+            //ten dang nhap
+            if (ten == "") {
+                document.getElementById('erten').innerHTML = "Yêu cầu nhập!";
+                return false;
+            }
+            if (patten.test(ten)) {
+                document.getElementById('erten').innerHTML = "*";
+                return true;
+            } else {
+                document.getElementById('erten').innerHTML = "Không đúng! Xin nhập lại theo dạng: Ho Ten";
+                return false;
+            }
+        }
+
+    function ktns() {
+            let ns = document.getElementById('datens').value; //string
+            ns = new Date(ns);
+            let namht = new Date();
+            let tuoi = namht.getFullYear() - ns.getFullYear();
+            if (tuoi < 18) {
+                document.getElementById('erns').innerHTML = "Tuổi phải trên 18";
+                return false;
+            } else {
+                document.getElementById('erns').innerHTML = "*";
+                return true;
+            }
+        }
+
+    function ktdc() {
+        let dc = document.getElementById('txtdc').value;
+        if (dc == "") {
+            document.getElementById('erdc').innerHTML = "Yêu cầu nhập!";
+            return false;
+        }else {
+            document.getElementById('erdc').innerHTML = "*";
+            return true;
+        }
+    }
+
+    function ktsdt() {
+        let sdt = document.getElementById('txtsdt').value;
+        let patsdt = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
+        if (sdt == "") {
+                document.getElementById('ersdt').innerHTML = "Yêu cầu nhập!";
+                return false;
+            }
+            if (patsdt.test(sdt)) {
+                document.getElementById('ersdt').innerHTML = "*";
+                return true;
+            } else {
+                document.getElementById('ersdt').innerHTML = "Số điện thoại yêu cầu 10 số";
+                return false;
+            }
+        }
+
+    function ktemail() {
+        let mail = document.getElementById('txtemail').value;
+        let patmail = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        if (mail == "") {
+            document.getElementById('eremail').innerHTML = "Yêu cầu nhập!";
+            return false;
+        }
+        if (patmail.test(mail)) {
+            document.getElementById('eremail').innerHTML = "*";
+            return true;
+        } else {
+            document.getElementById('eremail').innerHTML = "Không đúng! Xin nhập lại";
+            return false;
+        }
+    }
+    
+    function ktmk1() {
+        let mk = document.getElementById('mk').value;
+        let patmk = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        if (mk == "") {
+            document.getElementById('emk').innerHTML = "Yêu cầu nhập!";
+            return false;
+        } if (patmk.test(mk)) {
+            document.getElementById('emk').innerHTML = "*";
+            return true;
+        } else {
+            document.getElementById('emk').innerHTML = "Tối thiểu tám ký tự, ít nhất một chữ cái và một số";
+            return false;
+        }
+    }
+    
+    function ktnlmk() {
+        let nlmk = document.getElementById('txtcheckmk').value;
+        let patnlmk = document.getElementById('mk').value;
+        if (nlmk == "") {
+            document.getElementById('enlmk').innerHTML = "Yêu cầu nhập!";
+            return false;
+        } if (document.getElementById('txtcheckmk').value = patnlmk) {
+            document.getElementById('enlmk').innerHTML = "*";
+            return true;
+        } else {
+            document.getElementById('enlmk').innerHTML = "Mật khẩu không giống mật khẩu đã đặt!";
+            return false;
+        }
+    }
+
     function ktemail1() {
         let mail = document.getElementById('email').value;
         let patmail = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         if (mail == "") {
-            document.getElementById('email').innerHTML = "Yeu cau nhap";
+            document.getElementById('email').innerHTML = "Yêu cầu nhập!";
             return false;
         }
         if (patmail.test(mail)) {
@@ -181,9 +547,38 @@
             return false;
         }
     }
+    
+    function Dangnhap() {
+        // lay du lieu (dung) tren form truyen di: sang page, table
+        //let ten = document.getElementById('txttendn').value;
+        if (kttendn() && ktmk()) {
+            //let win = window.open("dn.html");
+            //localStorage.setItem("name", ten);
+            // let trnew = "<tr><td>" + stt + "</td><td>" + ten + "</td></tr>";
+            //document.getElementById('tbl').innerHTML += trnew;
+            alert("Đăng nhập thành công!");
+        } else {
+            alert("Phải nhập đầy đủ và đúng thông tin!");
+        }        
+    }
+    
+    function Dangky() {
+        // lay du lieu (dung) tren form truyen di: sang page, table
+        //let ten = document.getElementById('txtten').value;
+        //let ns = document.getElementById('datens').value;
+        //let dc = document.getElementById('txtdc').value;
+        //let sdt = document.getElementById('txtsdt').value;
+        //let mail = document.getElementById('txtemail').value;
+        if (ktten() && ktns() && ktdc() && ktsdt() && ktemail() && ktmk1() && ktnlmk()) {
+            alert("Đăng ký thành công! Vui lòng kiểm tra lại trong mục Thông tin khách hàng!");
+            //let win = window.open("./kh.php");
+        } else {
+            alert("Phải nhập đầy đủ và đúng định dạng!");
+        }
+    }
 
     function Dangky1() {
-    // lay du lieu (dung) tren form truyen di: sang page, table
+        // lay du lieu (dung) tren form truyen di: sang page, table
         //let ten = document.getElementById('txtten').value;
         if (ktemail1()) {
             //let win = window.open("dk.html");
@@ -191,10 +586,10 @@
             // let trnew = "<tr><td>" + stt + "</td><td>" + ten + "</td></tr>";
             //document.getElementById('tbl').innerHTML += trnew;
             alert("Kết nối thành công!");
-        }else { 
-            alert("Phải nhâp đúng định dạng");
+        } else {
+            alert("Phải nhập đúng định dạng!");
         }
     }
-    </script>
+</script>
 </body>
 </html>
