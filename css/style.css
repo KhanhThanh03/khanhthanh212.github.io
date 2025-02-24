@@ -25,12 +25,14 @@ header {
 header img {
     border-radius: 10px 8px 10px;
     height: 80px;
+    margin-right: 95px;
 }
 
 .LG img {
     float: left;
     height: 80px;
     margin-right: 20px;
+    margin-top: 10px;
 }
 
 header h1 {
@@ -53,6 +55,7 @@ header form {
     position: absolute;
     top: 2px;
     right: 20px;
+    margin-top: 20px;
 }
 
 /* Navigation */
@@ -114,17 +117,17 @@ nav li:hover {
     width: 100%;
     padding: 20px;
     display: flex;
-    flex-wrap: wrap; /* Cho phép xuống hàng nếu không đủ không gian */
-    gap: 20px; /* Khoảng cách giữa các bài viết */
-    justify-content: center; /* Căn giữa bài viết */
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .post-slide {
     background: #fff;
-    width: 300px; /* Điều chỉnh kích thước bài post */
+    width: 300px;
     transition: 0.3s;
     overflow: hidden;
-    border-radius: 10px; /* Bo góc */
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -182,6 +185,7 @@ section ul.products li {
 section ul.products li img {
     max-width: 100%;
     height: auto;
+    margin-left: 30%;
 }
 
 section ul.products li .product-top, 
@@ -273,6 +277,8 @@ aside ul.products {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 aside ul.products li {
@@ -285,6 +291,7 @@ aside ul.products li {
 aside ul.products li img {
     max-width: 100%;
     height: auto;
+    margin-left: 10%;
 }
 
 .mySlide {
@@ -344,7 +351,7 @@ article {
 }
 
 .align img {
-    margin-left: 16%;
+    margin-left: 20%;
 }
 
 .align h5 {
@@ -391,7 +398,7 @@ footer img {
 }
 
 .contact img {
-    margin-left: 25px;
+    margin-left: 20px;
 }
 
 .contact img:hover {
@@ -401,12 +408,12 @@ footer img {
 
 .introduce img {
     margin-top: -250px;
-    margin-left: 37%;
+    margin-left: 40%;
 }
 
 .introduce h6 {
     margin-top: -70px;
-    margin-left: 30%;
+    margin-left: 40%;
     font-size: small;
     font-family: 'Times New Roman', Times, serif;
 }
