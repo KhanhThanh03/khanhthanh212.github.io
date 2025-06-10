@@ -108,6 +108,21 @@ nav li:hover {
     transform: scale(1.05);
 }
 
+.dropdown-item {
+    padding: 10px 20px;
+    color: #333;
+    background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+    color: #007bff;
+    transform: translateX(5px); /* trượt nhẹ sang phải */
+    font-weight: 500;
+}
+
 /* Giới thiệu - GTvpp */
 .GTvpp {
     display: flex;
@@ -452,7 +467,7 @@ aside ul.products li img {
 .align {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 20px 40px;
     background-color: #446084;
     border-radius: 10px 10px 0 0;
@@ -499,28 +514,30 @@ footer {
     width: 100%;
     background-color: #333;
     color: #fff;
-    padding: 30px 40px;
+    padding: 40px 50px;
     display: flex;
-    align-items: flex-start;
+    flex-wrap: nowrap;
     justify-content: space-between;
-    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    box-sizing: border-box;
 }
 
-footer img {
-    max-height: 80px;
-    object-fit: contain;
-    margin-right: 20px;
+/* Logo */
+.anh img {
+    max-width: 100%;
+    height: auto;
 }
 
+/* Liên hệ */
 .contact h5 {
-    color: #fff;
     font-size: 18px;
-    margin-bottom: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .contact img {
-    margin-left: 20px;
+    width: 30px;
+    margin-right: 10px;
     transition: all 0.3s ease;
     border-radius: 8px;
     padding: 4px;
@@ -531,43 +548,40 @@ footer img {
     border: 2px solid black;
 }
 
+/* Giới thiệu */
 .introduce {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-}
-
-.introduce img {
-    max-width: 200px;
-    height: auto;
-}
-
-.introduce h6 {
-    margin-top: 10px;
-    font-size: 14px;
-    font-family: 'Times New Roman', Times, serif;
-    color: #333;
+    margin-top: -150px;
     text-align: center;
 }
 
+.introduce img {
+    max-width: 100px;
+}
+
+.introduce h6 {
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+
+/* Vận chuyển */
 .deli {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 15px;
-    margin: 20px 50px;
+    margin-top: -100px;
+    text-align: right;
 }
 
 .deli img {
-    max-width: 120px;
+    max-width: 100px;
     height: auto;
 }
 
 .deli p {
-    font-size: 14px;
-    color: #333;
+    font-size: 12px;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     max-width: 200px;
-    text-align: right;
 }
